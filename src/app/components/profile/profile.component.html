@@ -1,1 +1,9 @@
-<p>profile works!</p>
+<div class="container">
+    <p *ngIf="user.name"><span>Name:</span>&nbsp;&nbsp; {{user.name}}</p>
+    <p *ngIf="user.login"><span>Username:</span>&nbsp;&nbsp;{{user.login}}</p>
+              <p><span>Followers:</span>{{user.followers}}</p>
+              <p><span>Following:</span>{{user.following}}</p>
+              <p *ngIf="user.public_repos"><span>Number of public repositories:</span>&nbsp;&nbsp; {{user.public_repos}}</p>
+              <p *ngIf="user.bio"><span>Bio:</span>&nbsp;&nbsp; {{user.bio}}</p>
+              <p *ngIf="user.created_at"><span>Created:</span>&nbsp;&nbsp; {{user.created_at|date}} {{user.created_at}}</p>
+</div>

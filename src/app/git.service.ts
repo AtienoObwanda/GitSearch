@@ -5,64 +5,61 @@ import { environment } from 'src/environments/environment';
 
 import { Repo } from './class/repo';
 import { User } from './class/user';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GitService {
-user: User; //users
-repo: Repo[]=[]; //repository
-uName : string; //username
-rName : string; //repository name
-repos =[] //repositories
 
-  constructor(private http : HttpClient) { }
+  user: User;
+  repos: Repo[]=[];
+  username:string;
+  reponame:string;
+  repositories=[]
 
-//Get my profile
-getmyProfile(){
-  
-}
 
-//Get users
-getUser(username){
-  let promise = new Promise((resolve,reject)=>{
-    this.http.get<User[]>(`https://api.github.com/users/${username}?client_id=${environment.gitToken}`)
-      .subscribe(
-        {
-          next:(res: any)=>{
-            this.user=res.map((res:any)=>{
-              return new User(
-              res.avatar_url,
-              res.fname,
-              res.uname,
-              res.bio,
-              res.followers,
-              res.following,
-              res.public_repos,
-              res.created_at
-              );
-            });
-            resolve(res);
-          },
-          error: (err: any)=>{
-            this.user.uname="Username not found"
-            console.log("Error response")
-            reject(err);
-            
-          }
-        }
-      )
-  });
+
+  getUser(username){
+
+    
+ 
+ 
+ 
+
+  let promise = new Promise<void>((resolve,reject)=>{
+    //this.http.get<User[]>(`https://api.github.com/users/${username}?client_id=${environment.gitToken}`)
+    this.http.get <User>(`https://api.github.com/users/${username}?client_id=1179d43fb4eb61d15d6b3855fd52434a802d74e4`)
+    .subscribe((res:any)=>{
+      
+      this.user.name = res.name 
+      this.user.login= res.login           
+      this.user.bio  = res.bio            
+      this.user.followers=res.followers
+      this.user.following =  res.following
+      this.user.public_repos =  res.public_repos
+      this.user.created_at =  res.created_at
+      this.user.avatar_url =  res.avatar_url
+        
+        resolve()
+    },
+    
+    error =>{
+      this.user.login="Username not found"
+      console.log("Error response")
+      reject(error);
+      
+    }
+    )
+    
+          
+  })
+
   return promise;
-}
 
-//Get Repos
-getRepo(){
-  return
-}
+   }
 
-
-
-
-
-}
+   constructor(private http: HttpClient, private route: ActivatedRoute ) {
+    this.user = new User ("","","",0,0,0,new Date(),"")
+   }
+  }
