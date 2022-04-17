@@ -28,8 +28,7 @@ export class GitService {
  
 
   let promise = new Promise<void>((resolve,reject)=>{
-    //this.http.get<User[]>(`https://api.github.com/users/${username}?client_id=${environment.gitToken}`)
-    this.http.get <User>(`https://api.github.com/users/${username}?client_id=1179d43fb4eb61d15d6b3855fd52434a802d74e4`)
+    this.http.get<User[]>(`https://api.github.com/users/${username}?client_id=${environment.gitToken}`)
     .subscribe((res:any)=>{
       
       this.user.name = res.name 
