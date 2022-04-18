@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { Repo } from './class/repo';
 import { User } from './class/user';
 import { ActivatedRoute } from '@angular/router';
+import { RepositoryComponent } from './components/repository/repository.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +14,22 @@ import { ActivatedRoute } from '@angular/router';
 export class GitService {
 
   user: User;
-  repos: Repo[]=[];
+  repos: Repo;
   username:string;
   reponame:string;
   repositories=[]
 
 
-
+//GetUsers
   getUser(username){
-
-    
- 
- 
- 
-
-  let promise = new Promise<void>((resolve,reject)=>{
-    this.http.get<User[]>(`https://api.github.com/users/${username}?client_id=${environment.gitToken}`)
+  let profilePromise = new Promise<void>((resolve,reject)=>{
+    this.http.get<User>(`https://api.github.com/users/${username}?client_id=${environment.gitToken}`)
     .subscribe((res:any)=>{
       
       this.user.name = res.name 
       this.user.login= res.login           
-      this.user.bio  = res.bio            
+      this.user.bio  = res.bio   
+      this.user.location=res.location         
       this.user.followers=res.followers
       this.user.following =  res.following
       this.user.public_repos =  res.public_repos
@@ -46,19 +42,43 @@ export class GitService {
     error =>{
       this.user.login="Username not found"
       console.log("Error response")
-      reject(error);
-      
+      reject(error); 
     }
-    )
-    
-          
+    )       
   })
 
-  return promise;
+  return profilePromise;
 
+   }
+
+//GetRepo
+getRepo(username){
+     let repoPromise = new Promise<void>((resolve,reject)=>{
+      //  array
+      this.http.get<Repo>(`https://api.github.com/users/${username}/repos?client_id=${environment.gitToken}`)
+      .subscribe((res:any)=>{
+        this.repos = res
+       
+        resolve()
+      },
+      
+      error =>{
+        this.user.login="Username not found"
+        console.log("Error response")
+        reject(error);
+        
+      }
+      )
+      
+            
+    })
+  
+    return repoPromise;
    }
 
    constructor(private http: HttpClient, private route: ActivatedRoute ) {
-    this.user = new User ("","","",0,0,0,new Date(),"")
-   }
+    this.user = new User ("","","","",0,0,0,new Date(),"")
+    this.repos = new Repo ("","","")
+
+  }
   }

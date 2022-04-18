@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import { User } from 'src/app/class/user';
 import { GitService } from 'src/app/git.service';
 import { HttpClient } from '@angular/common/http';
@@ -12,14 +12,18 @@ import { Repo } from 'src/app/class/repo';
 })
 export class ProfileComponent implements OnInit {
   user: User;
-  repo : Repo[];
+  repo : Repo;
 
 
   constructor(private gitservice : GitService) { }
 
   ngOnInit() {
+    
     this.gitservice.getUser("AtienoObwanda")
     this.user=this.gitservice.user
+    this.gitservice.getRepo("AtienoObwanda")
+    this.repo=this.gitservice.repos
+
   }
 
 }

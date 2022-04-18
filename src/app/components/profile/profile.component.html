@@ -3,7 +3,13 @@
     <p *ngIf="user.login"><span>Username:</span>&nbsp;&nbsp;{{user.login}}</p>
               <p><span>Followers:</span>{{user.followers}}</p>
               <p><span>Following:</span>{{user.following}}</p>
+              <p *ngIf="user.location"><span>Location:</span>&nbsp;&nbsp; {{user.location}}</p>
               <p *ngIf="user.public_repos"><span>Number of public repositories:</span>&nbsp;&nbsp; {{user.public_repos}}</p>
               <p *ngIf="user.bio"><span>Bio:</span>&nbsp;&nbsp; {{user.bio}}</p>
               <p *ngIf="user.created_at"><span>Created:</span>&nbsp;&nbsp; {{user.created_at|date}} {{user.created_at}}</p>
+</div>
+
+<br/>
+<div class="repo" > 
+    <app-repository></app-repository>
 </div>
