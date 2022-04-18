@@ -1,0 +1,16 @@
+img {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    max-height: 100%;
+  }
+  .imgCard{
+      align-items: center;
+      justify-content: center;
+  }
+  .display{
+      max-height: 400px!important;
+  }
+  

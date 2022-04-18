@@ -24,16 +24,9 @@ export class UsersComponent implements OnInit {
 }
 
 
-result(){
-  this.gitservice.getUser(this.username)
-  this.user = this.gitservice.user
-  this.gitservice.getRepo(this.username)
-  this.repos =this.gitservice.repos
-}
-
   ngOnInit(): void {
     this.searchResult()
-    this.result()
+   
   }
 
 }
