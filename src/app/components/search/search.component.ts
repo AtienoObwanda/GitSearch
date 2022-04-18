@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GitService } from 'src/app/git.service';
-
 import { Repository } from 'src/app/class/repo';
 import { User } from 'src/app/class/user';
 
@@ -16,23 +15,19 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  user: User;
 
-  username: string;
+  username:string;
+  user: User;
+  repos:Repository[];
+
 
 getUserProfile(){
-  this.router.navigate(['/users',this.username])
-  this.gitservice.getUser(this.username)
-  this.user = this.gitservice.user
-  this.gitservice.getRepo(this.username)
- // this.repos =this.gitservice.repos
-}
-search(username:string){
-  if(username !=='')
-  {
-    this.gitservice.getUser(username)
-   
-  }
+    this.router.navigate(['/user',this.username])
+    this.gitservice.getUser(this.username)
+    this.user = this.gitservice.user
+    this.gitservice.getRepo(this.username)
+    this.repos =this.gitservice.repos
+  
 }
 
 }

@@ -8,7 +8,7 @@ import { RepositoryComponent } from './components/repository/repository.componen
 //Add page not found
 
 const routes: Routes = [
-//{  path: ' ', redirectTo: profile, pathMatch: 'full'},
+//{  path: ' ', redirectTo: ProfileComponent, pathMatch: 'full'},
 {path: 'profile', component: ProfileComponent},
 { path: 'user/:username' , component: UsersComponent},
 { path: 'repository/:username' , component:RepositoryComponent}
