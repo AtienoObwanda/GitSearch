@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GitService } from 'src/app/git.service';
 
-import { Repo } from 'src/app/class/repo';
+import { Repository } from 'src/app/class/repo';
 import { User } from 'src/app/class/user';
 
 @Component({

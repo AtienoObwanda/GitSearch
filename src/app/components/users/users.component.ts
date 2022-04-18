@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GitService } from 'src/app/git.service';
 
-import { Repo } from 'src/app/class/repo';
+import { Repository } from 'src/app/class/repo';
 import { User } from 'src/app/class/user';
 
 @Component({
@@ -11,7 +11,7 @@ import { User } from 'src/app/class/user';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  repos:Repo[];
+  //repos:Repo[];
   user: User;
   username: string;
 

@@ -1,8 +1,13 @@
+import { map } from 'rxjs/operators';
+
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
-import { Repo } from './class/repo';
+
+
+import { Repository } from './class/repo';
 import { User } from './class/user';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,7 +17,7 @@ import { ActivatedRoute } from '@angular/router';
 export class GitService {
 
   user: User;
-  
+  repos: Repository[]=[];
   username:string;
   
 
@@ -32,6 +37,7 @@ export class GitService {
       this.user.public_repos =  res.public_repos
       this.user.created_at =  res.created_at
       this.user.avatar_url =  res.avatar_url
+      this.user.html_url = res.html_url
         
         resolve()
     },
@@ -50,14 +56,40 @@ export class GitService {
 
 //GetRepo
 getRepo(username){
-  //let repoPromise = new Promise<void> ((resolve,reject)=>{
     
+     let promise = new Promise<void> ((resolve,reject)=>{
+      let arrayLength = this.repos.length;
+
+      for (let i=0; i<arrayLength; i++){
+          this.repos.pop()
+      }
+      this.http.get<Repository>(`https://api.github.com/users/${username}/repos?client_id=${environment.gitToken}`)
+      .toPromise().then(response=>{
+        for (let i=0; i<this.user.public_repos; i++){
+            let repo = new Repository("","","")
+            repo.name = response[i]["name"]
+            repo.description =response[i]["description"]
+            repo.html_url = response [i]["html_url"]
+            this.repos.push(repo)
+        }
+        resolve()
+    },
+
+    error => {
+        console.log("an error occurred")
+        reject(error)
+    }
+    )
+   })
+
+  return promise;
+
+  }
   
-    return //repoPromise;
-   }
+
 
    constructor(private http: HttpClient, private route: ActivatedRoute ) {
-    this.user = new User ("","","","",0,0,0,new Date(),"")
+    this.user = new User ("","","","",0,0,0,new Date(),"","")
 
   }
   }

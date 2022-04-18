@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Repo } from '../../class/repo';
+import { Repository } from '../../class/repo';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { Repo } from '../../class/repo';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-@Input () repos:Repo[];
+  @Input() repos:Repository[];
 
   constructor() { }
 

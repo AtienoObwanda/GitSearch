@@ -1,10 +1,20 @@
 <div class="cards">
     <div class="card" *ngFor="let repo of repos">
+        <div class="card-body">
+            <div class="card-title">
 
-    <!-- <div class="col-md-12" *ngFor="let repo of repos; let i=index"> -->
-        <a href="{{repo.html_url}}" style="color:#d19438;" >{{repo.name|titlecase}}</a>
-        <p *ngIf="repo.description">{{repo.description}}</p>
-        <p *ngIf="!repo.description">No description is available for this repository</p>
+                <a href="{{repo.html_url}}" style="color:#d19438;" >{{repo.name|titlecase}}</a>
+
+            </div>
+
+            <div class="card-text">
+                <p *ngIf="repo.description">{{repo.description}}</p>
+                <p *ngIf="!repo.description">No description is available for this repository</p>
+
+            </div>
+        
+        </div>
+
     </div>
 
 </div>
