@@ -8,8 +8,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 //Add page not found
 
 const routes: Routes = [
-{  path: ' ', component: ProfileComponent, pathMatch: 'full'},
-{path: 'profile/', component: ProfileComponent},
+{ path: '', redirectTo: 'profile', pathMatch: 'full' },
+{path: 'profile', component: ProfileComponent},
 { path: 'users/:username' , component: UsersComponent},
 { path: 'repository/:username' , component:RepositoryComponent},
 { path: '**', component: NotfoundComponent},

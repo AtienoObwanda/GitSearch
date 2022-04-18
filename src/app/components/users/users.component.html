@@ -1,5 +1,5 @@
 <div class="container">
-
+    <div *ngIf= "user.login !== 'User not found'"> 
         <div class="shadow-lg p-3 mb-5 bg-white rounded">
                 <h1 class="text-center" *ngIf="user.name"> {{user.name}}'s Git Profile</h1>
             
@@ -37,7 +37,9 @@
             
             
             </div>
+</div>
 
-
-      
+            <div *ngIf= "user.login === 'User not found'">
+                <p>User not found... enter valid Username</p>
+            </div>
 </div>

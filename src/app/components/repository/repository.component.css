@@ -7,6 +7,7 @@
     width: 200px;
     padding-bottom: 2em!important;
     margin-bottom: 30px;
+    overflow-x: hidden;
 }
 .repoCard{
     transform: translateY(-3px);
