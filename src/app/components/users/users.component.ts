@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GitService } from 'src/app/git.service';
-
 import { Repository } from 'src/app/class/repo';
 import { User } from 'src/app/class/user';
 
@@ -11,24 +10,30 @@ import { User } from 'src/app/class/user';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  //repos:Repo[];
+  repos:Repository[];
   user: User;
   username: string;
 
   constructor(private route:ActivatedRoute, private gitservice : GitService) { }
 
-  result(){
+  searchResult(){
     this.gitservice.getUser(this.username)
     this.user = this.gitservice.user
     this.gitservice.getRepo(this.username)
-    //this.repos =this.gitservice.repos
-
-    //this.showRepositories=false;
+    this.repos = this.gitservice.repos
 }
 
 
+result(){
+  this.gitservice.getUser(this.username)
+  this.user = this.gitservice.user
+  this.gitservice.getRepo(this.username)
+  this.repos =this.gitservice.repos
+}
+
   ngOnInit(): void {
-    this.result
+    this.searchResult()
+    this.result()
   }
 
 }

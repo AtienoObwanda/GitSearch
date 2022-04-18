@@ -20,9 +20,8 @@ export class SearchComponent implements OnInit {
   user: User;
   repos:Repository[];
 
-
-getUserProfile(){
-    this.router.navigate(['/user',this.username])
+getProfile(){
+    this.router.navigate(['/users',this.username])
     this.gitservice.getUser(this.username)
     this.user = this.gitservice.user
     this.gitservice.getRepo(this.username)
