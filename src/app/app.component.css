@@ -3,6 +3,6 @@ body{
     scroll-behavior: smooth;
     width: cover;
     box-sizing: content-box;
-    background-image: url('../assets/bg.jpg');
+    background-image: url('../assets/background.svg');
 
 }

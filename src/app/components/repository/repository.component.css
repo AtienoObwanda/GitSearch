@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+.repoCard{
+    max-width: 250px;
+    height: 250px;
+    border-radius: 3px;
+    width: 200px;
+    padding-bottom: 2em!important;
+    margin-bottom: 30px;
+}
+.repoCard{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(48, 6, 42, 0.35);
+    transition: all 0.3s ease-in-out;
+}
+.repoCard:hover{
+    box-shadow: 1px 0px 4px #FE4880;
+}
+.repoTitle{
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}

@@ -24,14 +24,14 @@
                     <p *ngIf="user.public_repos"><span>Public repositories:</span>&nbsp;&nbsp; {{user.public_repos}}</p>
                     <p *ngIf="user.bio"><span>Bio:</span>&nbsp;&nbsp; {{user.bio}}</p>
                     <p *ngIf="user.created_at"><span>Created on:</span>&nbsp;&nbsp; {{user.created_at|date}}</p>
-                    <p class="text-center" style="color: brown;"><a href="{{user.html_url}}" style="color: brown;text-decoration:none">Git Profile</a></p>
+                    <p class="text-center" style="color: #FE4880;"><a href="{{user.html_url}}" style="color: #FE4880;text-decoration:none">Git Profile</a></p>
                 </div>
             </div>
         </div>
     </div>
 
 <!--REPOSITORIES-->
-<h1 class="text-center"> REPOSITORIES</h1>
+<h1 class="text-center" style="font-weight: bold;"> REPOSITORIES</h1>
 <app-repository [repos]="repos" ></app-repository>
 
 

@@ -2,6 +2,7 @@
     height: 30px;
     align-items: center;
     margin-top: 5px;
+    margin-bottom: 3em;
   }
   .matCard{
       height: 49px;
@@ -18,8 +19,9 @@
   }
   ::placeholder{
     color: grey;
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 0;
+    text-align: center;
   }
   
   

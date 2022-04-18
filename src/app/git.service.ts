@@ -25,7 +25,7 @@ export class GitService {
 //GetUsers
   getUser(username){
   let profilePromise = new Promise<void>((resolve,reject)=>{
-    this.http.get<User>(`https://api.github.com/users/${username}?client_id=${environment.gitToken}`)
+    this.http.get<User>(`https://api.github.com/users/${username}?client_id=${environment.clientSecret}`)
     .subscribe((res:any)=>{
       
       this.user.name = res.name 
@@ -63,7 +63,7 @@ getRepo(username){
       for (let i=0; i<arrayLength; i++){
           this.repos.pop()
       }
-      this.http.get<Repository>(`https://api.github.com/users/${username}/repos?client_id=${environment.gitToken}`)
+      this.http.get<Repository>(`https://api.github.com/users/${username}/repos?client_id=${environment.clientSecret}`)
       .toPromise().then(response=>{
         for (let i=0; i<this.user.public_repos; i++){
             let repo = new Repository("","","")

@@ -1,20 +1,22 @@
-<div class="cards">
-    <div class="card" *ngFor="let repo of repos">
-        <div class="card-body">
-            <div class="card-title">
 
-                <a href="{{repo.html_url}}" style="color:#d19438;" >{{repo.name|titlecase}}</a>
-
+<div class="container">
+    <div class=""> <!--trendingContainer-->
+      <div class="">
+        <div class="row">
+            <div class="col-md-2" *ngFor="let repo of repos">
+                        <div class="card repoCard" >
+                            <div class="card-body">
+                                <div class="card-title repoTitle">
+                                    <a href="{{repo.html_url}}" >{{repo.name|titlecase}}</a>
+                                </div>
+                                <div class="card-text">
+                                    <p *ngIf="repo.description">{{repo.description}}</p>
+                                </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="card-text">
-                <p *ngIf="repo.description">{{repo.description}}</p>
-                <p *ngIf="!repo.description">No description is available for this repository</p>
-
-            </div>
-        
         </div>
-
-    </div>
-
+      </div>
+  </div>
 </div>
+
