@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './components/body/body.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RepositoryComponent } from './components/repository/repository.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     ProfileComponent,
-    RepositoryComponent
+    RepositoryComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
