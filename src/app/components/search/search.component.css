@@ -1,0 +1,25 @@
+.searchContainer{
+    height: 30px;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .matCard{
+      height: 49px;
+  }
+  .searchContainer input{
+    /* flex: 1; */
+    border: none;
+    padding-left: 10px;
+    height: 30px;
+    background-color: #fff !important;
+  }
+  .input:focus{
+    outline: none!important;
+  }
+  ::placeholder{
+    color: grey;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  
+  

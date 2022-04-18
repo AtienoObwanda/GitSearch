@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800&display=swap');
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .footer{
+      background-color: transparent;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 20px;
+      vertical-align: middle;
+      align-items: center !important;
+      text-align: center !important;
+      justify-content: center !important;
+  }
+  
+.footer a{
+    text-decoration: none;
+    color: #2900A5;
+  }
+  .footer a:hover{
+      text-decoration: none;
+      color: #FE4880;
+  }
+  .social i{
+      padding-left: 3em;
+  }
+  .social{
+    color: #2900A5;
+    width: 100%;
+    padding-bottom: 1em;
+    vertical-align: middle;
+    
+  }
+  .footer p{
+    width: 100%;
+    vertical-align: middle;
+    font-size: 10;
+    color: #2900A5;
+    font-weight: medium;
+    margin-left: 2em;
+    
+ }
+  .social :hover{
+    color: #FE4880;
+  }
+

@@ -27,5 +27,12 @@ getUserProfile(){
   this.gitservice.getRepo(this.username)
   this.repos =this.gitservice.repos
 }
+search(username:string){
+  if(username !=='')
+  {
+    this.gitservice.getUser(username)
+   
+  }
+}
 
 }

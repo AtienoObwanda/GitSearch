@@ -1,6 +1,17 @@
-<form class="form-inline my-2 my-lg-0" #userForm="ngForm">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search for a github user" aria-label="Search"
-                name="username"
-                [(ngModel)]="username">
-    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" (click)="getUserProfile()" routerLink="/users" routerLinkActive="activeRoute">Search</button>
+<div class="container searchContainer">
+ <mat-card class="matCard">
+  <form class="form-inline my-2 my-lg-0" #userForm="ngForm"> 
+  <div class="row">
+    <div class="col">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search for a github user" aria-label="Search"
+      name="username"
+      [(ngModel)]="username"  > 
+    </div>
+    <div class="col">
+      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" (click)="getUserProfile()" routerLink="/users" routerLinkActive="activeRoute">Search</button> 
+
+    </div>
+  </div>
   </form>&nbsp;&nbsp;&nbsp;
+ </mat-card>
+</div>
