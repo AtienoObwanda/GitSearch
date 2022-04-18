@@ -1,136 +1,32 @@
-// {
-// user: User; 
-// repo: Repo[]=[]; 
-// username : string; 
-// repoName : string; 
-// repos =[] //repositories
-
-//   constructor(private http : HttpClient) { }
-
-// //Get my profile
-// getmyProfile(){
+// getRepo(username){
+//     let repoPromise = new Promise<void> ((resolve,reject)=>{
+//       let arrayLength = this.repos.length;
   
-// }
-
-// //Get users
-// getUser(username){
-
-//  /*
-//   interface gitUser{
-//     name:string,
-//     login:string,
-//     bio: string,
-//     url: string,
-//     followers: number,
-//     following: number,
-//     public_repos: number,
-//     created_at: Date,
-//     avatar_url: string,
-   
-// }
-//  */
-
-//   let promise = new Promise((resolve,reject)=>{
-//     //this.http.get<User[]>(`https://api.github.com/users/${username}?client_id=${environment.gitToken}`)
-//     this.http.get<User>(`https://api.github.com/users/${username}?client_id=1179d43fb4eb61d15d6b3855fd52434a802d74e4`)
-//     .subscribe(
-//         {
-//           next:(res: any)=>{
-//             this.user=res.map((res:any)=>{
-//               return new User(
-//               res.avatar_url,
-//               res.name,
-//               res.login,
-//               res.bio,
-//               res.followers,
-//               res.following,
-//               res.public_repos,
-//               res.created_at
-//               );
-//             });
-//             resolve(res);
-//           },
-//           error: (err: any)=>{
-//             this.user.login="Username not found"
-//             console.log("Error response")
-//             reject(err);
-            
-//           }
+//       for (let i=0; i<arrayLength; i++){
+//           this.repos.pop()
+//       }
+  
+//       this.http.get<Repo>(`https://api.github.com/users/${username}/repos?client_id=${environment.gitToken}`)
+//       .subscribe(
+//         (res)=>{
+//         for (let i=0; i<this.user.public_repos; i++){
+//             let repo = new Repo("","","")
+  
+//             repo.name =res [i]["name"]
+//             repo.description = res [i]["description"]
+//             repo.html_url = res [i]["html_url"]
+  
+//             this.repos.push(repo)
 //         }
-//       )
-//   });
-//   return promise;
-// }
-
-// //Get Repos
-// getRepo(){
-//   return
-// }
-
-
-
-
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//NEW DUMMY
-
-
-
-
-
-
-
-
-// interface userApiResponse{
-//     name:string,
-//     login:string,
-//     bio: string,
-//     url: string,
-//     followers: number,
-//     following: number,
-//     public_repos: number,
-//     created_at: Date,
-//     avatar_url: string,
-   
-// }
-
-
-// let promise =new Promise<void> ((resolve, reject)=>{
-// this.http.get<userApiResponse>(`https://api.github.com/users/${username}?client_id=1179d43fb4eb61d15d6b3855fd52434a802d74e4`).toPromise().then(response =>{
-//        this.user.name = response.name 
-//        this.user.login= response.login           
-//        this.user.bio  = response.bio            
-//        this.user.followers=response.followers
-//        this.user.following =  response.following
-//        this.user.public_repos =  response.public_repos
-//        this.user.created_at =  response.created_at
-//        this.user.avatar_url =  response.avatar_url
-       
-//        resolve()
-//    },
-//    error =>{
-//        this.user.login ="User not found"
-//        console.log("An error")
-//        reject(error)
-//    }
-//    )
-//   })
-
-//   return promise
+//         resolve()
+//     },
+  
+//     error => {
+//         console.log("an error occurred")
+//         reject(error)
+//     }
+//     )
+//    })
+    
+//       return repoPromise;
+//      }

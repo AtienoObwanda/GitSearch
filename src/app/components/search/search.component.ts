@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
   user: User;
-  repos : Repo[];
+
   username: string;
 
 getUserProfile(){
@@ -25,7 +25,7 @@ getUserProfile(){
   this.gitservice.getUser(this.username)
   this.user = this.gitservice.user
   this.gitservice.getRepo(this.username)
-  this.repos =this.gitservice.repos
+ // this.repos =this.gitservice.repos
 }
 search(username:string){
   if(username !=='')

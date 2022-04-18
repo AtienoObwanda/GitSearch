@@ -12,10 +12,9 @@ import { ActivatedRoute } from '@angular/router';
 export class GitService {
 
   user: User;
-  repos: Repo[]=[];
+  
   username:string;
-  reponame:string;
-  repositories=[]
+  
 
 
 //GetUsers
@@ -51,35 +50,10 @@ export class GitService {
 
 //GetRepo
 getRepo(username){
-  let repoPromise = new Promise<void> ((resolve,reject)=>{
-    let arrayLength = this.repos.length;
-
-    for (let i=0; i<arrayLength; i++){
-        this.repos.pop()
-    }
-    this.http.get<Repo>(`https://api.github.com/users/${username}/repos?client_id=${environment.gitToken}`)
-    .subscribe(
-      (res)=>{
-      for (let i=0; i<this.user.public_repos; i++){
-          let repo = new Repo("","","")
-
-          repo.name = [i][res.name]
-          repo.description = [i][res.description]
-          repo.html_url = [i][res.html_url]
-
-          this.repos.push(repo)
-      }
-      resolve()
-  },
-
-  error => {
-      console.log("an error occurred")
-      reject(error)
-  }
-  )
- })
+  //let repoPromise = new Promise<void> ((resolve,reject)=>{
+    
   
-    return repoPromise;
+    return //repoPromise;
    }
 
    constructor(private http: HttpClient, private route: ActivatedRoute ) {

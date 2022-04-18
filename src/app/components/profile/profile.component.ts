@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
     this.gitservice.getUser("AtienoObwanda")
     this.user=this.gitservice.user
     this.gitservice.getRepo("AtienoObwanda")
-    this.repos=this.gitservice.repos
+    //this.repos=this.gitservice.repos
 
   }
 

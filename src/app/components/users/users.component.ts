@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
     this.gitservice.getUser(this.username)
     this.user = this.gitservice.user
     this.gitservice.getRepo(this.username)
-    this.repos =this.gitservice.repos
+    //this.repos =this.gitservice.repos
 
     //this.showRepositories=false;
 }
