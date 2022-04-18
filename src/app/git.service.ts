@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { Repo } from './class/repo';
 import { User } from './class/user';
 import { ActivatedRoute } from '@angular/router';
-import { RepositoryComponent } from './components/repository/repository.component';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +12,7 @@ import { RepositoryComponent } from './components/repository/repository.componen
 export class GitService {
 
   user: User;
-  repos: Repo;
+  repos: Repo[]=[];
   username:string;
   reponame:string;
   repositories=[]
@@ -53,32 +51,39 @@ export class GitService {
 
 //GetRepo
 getRepo(username){
-     let repoPromise = new Promise<void>((resolve,reject)=>{
-      //  array
-      this.http.get<Repo>(`https://api.github.com/users/${username}/repos?client_id=${environment.gitToken}`)
-      .subscribe((res:any)=>{
-        this.repos = res
-       
-        resolve()
-      },
-      
-      error =>{
-        this.user.login="Username not found"
-        console.log("Error response")
-        reject(error);
-        
+  let repoPromise = new Promise<void> ((resolve,reject)=>{
+    let arrayLength = this.repos.length;
+
+    for (let i=0; i<arrayLength; i++){
+        this.repos.pop()
+    }
+    this.http.get<Repo>(`https://api.github.com/users/${username}/repos?client_id=${environment.gitToken}`)
+    .subscribe(
+      (res)=>{
+      for (let i=0; i<this.user.public_repos; i++){
+          let repo = new Repo("","","")
+
+          repo.name = [i][res.name]
+          repo.description = [i][res.description]
+          repo.html_url = [i][res.html_url]
+
+          this.repos.push(repo)
       }
-      )
-      
-            
-    })
+      resolve()
+  },
+
+  error => {
+      console.log("an error occurred")
+      reject(error)
+  }
+  )
+ })
   
     return repoPromise;
    }
 
    constructor(private http: HttpClient, private route: ActivatedRoute ) {
     this.user = new User ("","","","",0,0,0,new Date(),"")
-    this.repos = new Repo ("","","")
 
   }
   }

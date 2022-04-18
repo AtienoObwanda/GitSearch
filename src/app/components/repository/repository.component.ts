@@ -8,9 +8,7 @@ import { Repo } from '../../class/repo';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-repos : Repo;
-//@Input () repos:Repo[];
-//repos: Repo[]
+@Input () repos:Repo[];
 
   constructor() { }
 

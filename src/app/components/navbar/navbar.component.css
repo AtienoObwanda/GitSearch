@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800&display=swap');
+.example-spacer{
+    flex: 1 1 auto;
+}
+.header{
+    background-color: transparent;
+    width: 100%;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+.social{
+    color: #2900A5;
+    justify-content: center;
+}
+.social :hover{
+    color: #FE4880;
+}
+.social i{
+    padding-left: 3em;
+    padding-top: 2em;
+}

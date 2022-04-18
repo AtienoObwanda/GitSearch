@@ -12,7 +12,8 @@ import { Repo } from 'src/app/class/repo';
 })
 export class ProfileComponent implements OnInit {
   user: User;
-  repo : Repo;
+  //repo : Repo;
+  repos : Repo[]
 
 
   constructor(private gitservice : GitService) { }
@@ -22,8 +23,11 @@ export class ProfileComponent implements OnInit {
     this.gitservice.getUser("AtienoObwanda")
     this.user=this.gitservice.user
     this.gitservice.getRepo("AtienoObwanda")
-    this.repo=this.gitservice.repos
+    this.repos=this.gitservice.repos
 
   }
+
+
+
 
 }

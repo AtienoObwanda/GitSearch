@@ -11,7 +11,7 @@ import { User } from 'src/app/class/user';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  repos:Repo;
+  repos:Repo[];
   user: User;
   username: string;
 
