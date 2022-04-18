@@ -9,6 +9,7 @@ import { BodyComponent } from './components/body/body.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RepositoryComponent } from './components/repository/repository.component';
 import { UsersComponent } from './components/users/users.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UsersComponent } from './components/users/users.component';
     BodyComponent,
     ProfileComponent,
     RepositoryComponent,
-    UsersComponent
+    UsersComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
