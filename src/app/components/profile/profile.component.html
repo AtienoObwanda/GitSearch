@@ -23,7 +23,7 @@
                     <p *ngIf="user.location">Location: {{user.location}}</p>
                     <p *ngIf="user.public_repos">Repositories:{{user.public_repos}}</p>
                     <p *ngIf="user.bio"> Bio: {{user.bio}}</p>
-                    <p *ngIf="user.created_at">Created on: {{user.created_at|date}}</p>
+                    <p *ngIf="user.created_at">Created on: <span appApi>{{user.created_at|date}}</span></p>
                     <p class="text-center" style="color: #FE4880;"><a href="{{user.html_url}}" style="color: #FE4880;text-decoration:none">Git Profile</a></p>
                 </div>
             </div>
@@ -31,7 +31,7 @@
     </div>
 
 <!--REPOSITORIES-->
-<h1 class="text-center" style="font-weight: bold;"> REPOSITORIES</h1>
+<h1 class="text-center" style="font-weight: bold;">REPOSITORIES</h1>
 <app-repository [repos]="repos" ></app-repository>
 
 

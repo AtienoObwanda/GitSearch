@@ -17,15 +17,15 @@
                     <div class="col">
                         <div class="shadow p-3 mb-5 bg-white rounded">
                             <div class="card-body display">
-                                <p *ngIf="user.name"><span>Name:</span>&nbsp;&nbsp; {{user.name}}</p>
-                                <p *ngIf="user.login"><span>Username:</span>&nbsp;&nbsp;{{user.login}}</p>
-                                <p><span>Followers:</span>{{user.followers}}</p>
-                                <p><span>Following:</span>{{user.following}}</p>
-                                <p *ngIf="user.location"><span>Location:</span>&nbsp;&nbsp; {{user.location}}</p>
-                                <p *ngIf="user.public_repos"><span>Public repositories:</span>&nbsp;&nbsp; {{user.public_repos}}</p>
-                                <p *ngIf="user.bio"><span>Bio:</span>&nbsp;&nbsp; {{user.bio}}</p>
-                                <p *ngIf="user.created_at"><span>Created on:</span>&nbsp;&nbsp; {{user.created_at|date}}</p>
-                                <p class="text-center" style="color: brown;"><a href="{{user.html_url}}" style="color: brown;text-decoration:none">Git Profile</a></p>
+                                <p *ngIf="user.name">Name:{{user.name}}</p>
+                                <p *ngIf="user.login">Username:{{user.login}}</p>
+                                <p>Followers:{{user.followers}}</p>
+                                <p>Following:{{user.following}}</p>
+                                <p *ngIf="user.location">Location:{{user.location}}</p>
+                                <p *ngIf="user.public_repos">Repositories: {{user.public_repos}}</p>
+                                <p *ngIf="user.bio">Bio:{{user.bio}}</p>
+                                <p *ngIf="user.created_at">Created on: <span appApi>{{user.created_at|date}}</span></p>
+                                <p class="text-center" style="color: brown;"><a href="{{user.html_url}}" style="color:#FE4880;text-decoration:none">Git Profile</a></p>
                             </div>
                         </div>
                     </div>

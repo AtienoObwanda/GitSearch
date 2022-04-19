@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ApiDirective } from './api.directive';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     NavbarComponent,
     FooterComponent,
     NotfoundComponent,
+    ApiDirective,
   ],
   imports: [
     BrowserModule,
