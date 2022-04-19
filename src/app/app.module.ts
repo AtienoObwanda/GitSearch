@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ApiDirective } from './api.directive';
+import { ApiPipe } from './api.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ApiDirective } from './api.directive';
     FooterComponent,
     NotfoundComponent,
     ApiDirective,
+    ApiPipe,
   ],
   imports: [
     BrowserModule,

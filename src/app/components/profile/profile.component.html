@@ -17,7 +17,7 @@
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="card-body display">
                     <p *ngIf="user.name">Name: {{user.name}}</p>
-                    <p *ngIf="user.login">Username:{{user.login}}</p>
+                    <p *ngIf="user.login">Username: {{user.login|lowercase}}</p>
                     <p>Followers: {{user.followers}}</p>
                     <p>Following: {{user.following}}</p>
                     <p *ngIf="user.location">Location: {{user.location}}</p>
