@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  gitToken: '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',
-  clientSecret: '7b0c0efe703019b1b481e5b073f5644468ad893c'
+  gitToken: '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',
+  
 };
 
 /*
