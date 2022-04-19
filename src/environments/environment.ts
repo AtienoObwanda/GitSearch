@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  gitToken: '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',
+  gitToken: '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',
   gitSecret: '9329d6649d52603b6cc8ca4e5ffc87ed7a05e59c'
 
   
