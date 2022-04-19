@@ -69,6 +69,8 @@ There are no known bugs at the moment.</br>
  **Future Work**
 *Re-Create the same project using a different technology, let's say React*
 
+****
+
 **Contact Information**
 
 *Incase of any question or contributions, you can contact me through:*
