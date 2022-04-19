@@ -1,4 +1,3 @@
-import { map } from 'rxjs/operators';
 
 
 import { Injectable } from '@angular/core';
@@ -76,7 +75,7 @@ getRepo(username){
     },
 
     error => {
-        console.log("an error occurred")
+        console.log("request not successful!")
         reject(error)
     }
     )
